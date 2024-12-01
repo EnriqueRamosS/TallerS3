@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <title>Formulario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body class="d-flex justify-content-center aling-items-center" style="height: 100vh;">
+        <div class="border p-4 rounded">
+            <!-- El formulario se envía con POST a la ruta /guardar -->
+            <form action="/guardar" method="post" th:object="${usuario}" class="w-100" style="max-width: 400px;">
+                <h1 class="text-center mb-4">Formulario de Registro</h1> <!-- Título centrado -->
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" th:field="*{Nombre}" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo:</label>
+                    <input type="email" class="form-control" id="correo" name="correo" th:field="*{correo}" required />
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
